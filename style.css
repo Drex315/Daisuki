@@ -1,0 +1,10 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#02040b}
+body{font-family:Arial,Helvetica,sans-serif;color:#dff6ff}
+.scene{position:relative;width:100%;height:100dvh;min-height:520px;overflow:hidden;background:radial-gradient(circle at 50% 52%,rgba(20,110,255,.075),transparent 25%),radial-gradient(circle at 50% 82%,rgba(0,180,255,.045),transparent 28%),#02040b}
+#heartCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:manipulation}
+.hint{position:absolute;left:50%;bottom:clamp(28px,6vh,58px);transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;pointer-events:none;user-select:none;color:rgba(190,230,255,.48);font-size:10px;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 0 12px rgba(40,160,255,.45);animation:breathe 2.8s ease-in-out infinite}
+.tiny-heart{color:#60a5fa;font-size:13px;text-shadow:0 0 10px #168cff}
+@keyframes breathe{0%,100%{opacity:.42}50%{opacity:.9}}
+@media(max-width:600px){.scene{min-height:100dvh}.hint{bottom:34px}}
+@media(prefers-reduced-motion:reduce){.hint{animation:none}}
