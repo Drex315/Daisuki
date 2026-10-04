@@ -4,6 +4,9 @@
 const canvas=document.getElementById("heartCanvas");
 const ctx=canvas.getContext("2d",{alpha:true});
 const hint=document.getElementById("hint");
+const letterWrap=document.getElementById("letterWrap");
+const closeLetter=document.getElementById("closeLetter");
+let letterOpened=false;
 
 const HEART_COUNT=1050,FLOAT_COUNT=70,BURST_COUNT=115;
 const BLUE_SHADES=["#2563eb","#3b82f6","#60a5fa","#93c5fd","#38bdf8","#7dd3fc","#bfdbfe"];
@@ -130,7 +133,11 @@ function tap(e){
  const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,pos=heartPosition();
  if(Math.hypot(x-pos.cx,y-pos.cy)<pos.scale*.9){
   spawnBurst(x,y,1.15);flash=1;heartScale=1.045;
-  if(hint){hint.style.opacity="0";setTimeout(()=>hint.style.display="none",500)}
+  if(!letterOpened){
+   letterOpened=true;
+   if(hint){hint.style.opacity="0";setTimeout(()=>hint.style.display="none",500)}
+   setTimeout(()=>{letterWrap.classList.add("open");letterWrap.setAttribute("aria-hidden","false")},360);
+  }
  }
 }
 
@@ -157,6 +164,7 @@ function update(time){
 
 addEventListener("resize",resize,{passive:true});
 canvas.addEventListener("pointerdown",tap,{passive:true});
+closeLetter.addEventListener("click",()=>{letterWrap.classList.remove("open");letterWrap.setAttribute("aria-hidden","true");letterOpened=false;if(hint){hint.style.display="flex";hint.style.opacity="1"}});
 createHeartParticles();resize();
 setTimeout(()=>{const p=heartPosition();spawnBurst(p.cx,p.cy,.55)},450);
 requestAnimationFrame(update);

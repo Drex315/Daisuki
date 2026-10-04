@@ -9,8 +9,26 @@
 </head>
 <body>
 <main class="scene">
-<canvas id="heartCanvas"></canvas>
-<div class="hint" id="hint"><span class="tiny-heart">♥</span><span>Tap the heart</span></div>
+  <canvas id="heartCanvas" aria-label="A glowing blue particle heart"></canvas>
+  <div class="hint" id="hint"><span class="tiny-heart">♥</span><span>Tap the heart</span></div>
+  <section class="letter-wrap" id="letterWrap" aria-hidden="true">
+    <article class="letter-card" role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+      <div class="letter-decoration" aria-hidden="true">✦ &nbsp; 💙 &nbsp; ✦</div>
+      <h1 id="letterTitle">My Love,</h1>
+      <div class="letter-copy">
+        <p>One of the things I admire most about you is how kind you are, even when you don't always show everything you're feeling.</p>
+        <p>I know you have your walls sometimes, and I don't blame you for them. I think there's something beautiful about the way you protect your heart while still finding little ways to care for the people you love.</p>
+        <p>And I've been lucky enough to see that side of you.</p>
+        <p>I've seen your softness, your patience, your silly side, and the way you can care so deeply even when you don't always know how to say it.</p>
+        <p>I hope you never feel like you have to be anything other than yourself around me. You don't have to explain every feeling or have everything figured out.</p>
+        <p>Just being you is enough.</p>
+        <p>And honestly, getting to know the person behind those walls has been one of my favorite things about knowing you.</p>
+        <p>I hope you always remember how genuinely special your heart is.</p>
+      </div>
+      <p class="signature">Always yours. <span>❤️</span></p>
+      <button class="close-letter" id="closeLetter" type="button">Stay with the heart&nbsp; ♥</button>
+    </article>
+  </section>
 </main>
 <script src="script.js"></script>
 </body>

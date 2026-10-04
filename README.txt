@@ -1,15 +1,11 @@
-BLUE PARTICLE HEART — NEW V1
+BLUE PARTICLE HEART — LETTER EDITION
 
-Standalone project with:
-- Optimized blue particle heart
-- Slow 3D-style rotation
-- Subtle heartbeat
-- Floating blue particles
-- Atmospheric glow
-- Tap-to-burst interaction
-- Mobile and desktop support
+Includes:
+- Optimized blue particle heart with slow 3D-style rotation and heartbeat
+- Floating blue particles and atmospheric glow
+- Tap the heart to create a particle burst and reveal the letter
+- Scrollable letter card designed for mobile and desktop
+- Close the letter to return to the heart and open it again
 
-No letter is included.
-
-Upload index.html, style.css and script.js together to GitHub Pages.
+Upload index.html, style.css and script.js together to the root of your GitHub Pages repository.
 No external libraries are required.
