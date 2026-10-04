@@ -3,7 +3,7 @@ BLUE PARTICLE HEART — LETTER EDITION
 Includes:
 - Optimized blue particle heart with slow 3D-style rotation and heartbeat
 - Floating blue particles and atmospheric glow
-- Tap the heart to create a particle burst and reveal the letter
+- Tap anywhere on the main screen to create a particle burst and reveal the letter
 - Scrollable letter card designed for mobile and desktop
 - Close the letter to return to the heart and open it again
 

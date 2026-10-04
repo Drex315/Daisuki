@@ -130,14 +130,16 @@ function drawBursts(){
 }
 
 function tap(e){
- const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,pos=heartPosition();
- if(Math.hypot(x-pos.cx,y-pos.cy)<pos.scale*.9){
-  spawnBurst(x,y,1.15);flash=1;heartScale=1.045;
-  if(!letterOpened){
-   letterOpened=true;
-   if(hint){hint.style.opacity="0";setTimeout(()=>hint.style.display="none",500)}
-   setTimeout(()=>{letterWrap.classList.add("open");letterWrap.setAttribute("aria-hidden","false")},360);
-  }
+ // Open the letter on any tap in the main scene. This is more reliable on
+ // mobile screens than requiring a tap inside a small invisible heart hitbox.
+ const r=canvas.getBoundingClientRect();
+ const x=Math.max(0,Math.min(width,e.clientX-r.left));
+ const y=Math.max(0,Math.min(height,e.clientY-r.top));
+ spawnBurst(x,y,1.15);flash=1;heartScale=1.045;
+ if(!letterOpened){
+  letterOpened=true;
+  if(hint){hint.style.opacity="0";setTimeout(()=>{hint.style.display="none"},500)}
+  setTimeout(()=>{letterWrap.classList.add("open");letterWrap.setAttribute("aria-hidden","false")},220);
  }
 }
 
